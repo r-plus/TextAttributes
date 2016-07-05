@@ -101,6 +101,15 @@ public class TextAttributes {
         return clone
     }
     
+    /// InterfaceBuilder paragraph settings respected attributes dictionary.
+    var attributes: [String: AnyObject] {
+        var attributes = dictionary
+        if paragraphStyle == NSParagraphStyle() {
+            attributes[NSParagraphStyleAttributeName] = nil
+        }
+        return attributes
+    }
+
     // MARK: - Font
     
     /// The font attribute.

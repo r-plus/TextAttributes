@@ -44,7 +44,7 @@ extension NSAttributedString {
      - returns: The newly created NSAttributedString.
      */
     public convenience init(string: String, attributes: TextAttributes) {
-        self.init(string: string, attributes: attributes.dictionary)
+        self.init(string: string, attributes: attributes.attributes)
     }
 }
 
@@ -75,7 +75,7 @@ extension NSMutableAttributedString {
      - parameter range:      The range of characters whose attributes are set.
      */
     public func setAttributes(attributes: TextAttributes, range: NSRange) {
-        setAttributes(attributes.dictionary, range: range)
+        setAttributes(attributes.attributes, range: range)
     }
     
     /**
@@ -104,6 +104,6 @@ extension NSMutableAttributedString {
      - parameter range:      he range of characters to which the specified attributes apply.
      */
     public func addAttributes(attributes: TextAttributes, range: NSRange) {
-        addAttributes(attributes.dictionary, range: range)
+        addAttributes(attributes.attributes, range: range)
     }
 }
